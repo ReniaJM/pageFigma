@@ -1,0 +1,65 @@
+@import './variables';
+@import './desktop';
+
+
+*,
+*::before,
+*::after{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $mainFont;
+  font-size: 14px;
+  scroll-behavior: smooth;
+  color: $white;
+
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+
+}
+
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+font-size: 1.6rem;
+}
+
+.headline-logo{
+  text-transform: uppercase;
+
+}
+
+.main-nav {
+text-transform: uppercase;
+display: flex;
+}
+
+
+.hero{
+  width: 100%;
+  height: 100vh;
+  background: url("../images/Bg.jpeg") center no-repeat;
+  background-size: cover;
+  color: $white;
+
+}
+
+
