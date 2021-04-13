@@ -13,6 +13,7 @@
 html {
   font-family: $mainFont;
   font-size: 14px;
+  font-weight: normal;;
   scroll-behavior: smooth;
   color: $white;
 
@@ -95,7 +96,7 @@ text-transform: uppercase;
 line-height: 86,4px;
 }
 
-.hero_content p {
+.hero_content h3{
 position: absolute;
 width: 540px;
 height: 124px;
@@ -121,3 +122,70 @@ align-items: center;
 text-transform: uppercase;
 justify-content: center;
 }
+
+// .................
+
+
+.section_features {
+background-color: $background;
+height: 664px;
+}
+
+.features h2 {
+color:$black;
+text-align: center;
+text-transform: capitalize;
+font-size: 36px;
+line-height: 43px;
+padding: 63px;
+}
+
+.features_container {
+display: flex;
+justify-content: center;
+}
+
+.features_box {
+position: relative;
+width: 350px;
+height: 250px;
+background: url('../images/fature_1.jpeg');
+border-radius: 8px;
+margin:30px;
+}
+
+.featuers_description {
+position: absolute;
+left: 29px;
+top: 157px;
+width: 293px;
+height: 198px;
+background: #FFFFFF;
+box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+color: $black;
+text-align: center;
+}
+
+.featuers_description h2 {
+font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+padding: 20px 32px;
+}
+
+.featuers_description h3 {
+font-weight: normal;
+font-size: 12px;
+line-height: 150%;
+padding: 15px 32px;
+}
+
+.featuers_description a {
+color: $button;
+font-weight: bold;
+font-size: 12px;
+line-height: 150%;
+}
+
+// .................
