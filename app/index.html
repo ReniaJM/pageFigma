@@ -8,10 +8,9 @@
   <title>Figma Page</title>
   <meta name="description" content="Figma Page">
 
-
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
 </head>
 <body>
 
@@ -125,9 +124,31 @@
     </div>
   </div>
 </section>
-
-
-  <script src="js/vendors/jquery-3.4.1.min.js"></script>
-  <script src="js/script.min.js"></script>
+<section class="slider_section">
+ 
+  <div class="slider_container">
+    <div class="slider_description">
+      <h2>Stay focused on saving money</h2>
+      <h3>It is important to stay focused on saving money in any way you can. We help you monitor your spending habits so you can easily spot and cut any unnecessary expenses. Simply join today to get started!</h3>
+      <div class="slider_icons">
+       <img src="./images/ion-logo-google-playstore.png">
+       <img src="./images/ion-logo-apple-appstore.png">
+       <img src="./images/simple-icons_windows.png">
+      </div>
+   
+    </div>
+    <div class="slider_animation">
+      <div class="carousel">
+        <ul class="carousel__list">
+          <li class="carousel__item" data-pos="-1"></li>
+          <li class="carousel__item" data-pos="0"></li>
+          <li class="carousel__item" data-pos="1"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="js/vendors/jquery-3.4.1.min.js"></script>
+<script src="js/script.min.js"></script>
 </body>
 </html>

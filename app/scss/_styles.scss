@@ -10,10 +10,10 @@
   box-sizing: border-box;
 }
 
-img {
-  width: 100%;
-  max-width: 100%;
-}
+// img {
+//   width: 100%;
+//   max-width: 100%;
+// }
 
 a {
   text-decoration: none;
@@ -265,6 +265,133 @@ line-height: 14px;
   background: {
     image: $image;
     repeat: no-repeat;
+  }
+}
+ 
+
+.slider_container {
+display: flex;
+}
+
+
+.slider_section {
+  background-color: $button;
+  height: 500px;
+  width: 100%;
+}
+.slider_description {
+  width: 40%;
+  max-width: 445px;
+  margin:122px 0px 0px 165px;
+  
+ 
+}
+
+.slider_description h2{
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 43px;
+padding-bottom: 24px;
+
+}
+
+.slider_description h3{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: justify;
+  padding-bottom: 24px;
+}
+.slider_animation{
+  width: 60%;
+  color: $white;
+}
+
+.slider_icons {
+  color:$white;
+
+}
+
+.slider_icons img {
+margin-right: 20px;
+align-items: center;
+width: 32px;
+
+}
+
+.slider_animation {
+  margin: 94px;
+}
+
+
+
+.carousel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  font-family: Arial;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    perspective: 300px;
+  }
+  
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0px;
+    width: 445px;
+    height: 311px;
+    border-radius: 15px;
+    position: absolute;
+    transition: all .3s ease-in;
+
+    &:nth-child(1) {
+      background: url("../images/Video_bg_2.jpeg");
+      background-size: cover;
+    }
+    &:nth-child(2) {
+      background: url("../images/Video_bg.jpeg");
+      background-size: cover;
+    }
+    &:nth-child(3) {
+      background: url("../images/Video_bg_3.jpeg");
+      background-size: cover;
+    }
+
+    &[data-pos="0"] {
+      z-index: 5;
+    }
+    
+    &[data-pos="-1"],
+    &[data-pos="1"] {
+      opacity: 0.5;
+      filter: grayscale(90%);
+    }
+    
+    &[data-pos="-1"] {
+      transform: translateX(-14%) scale(.9);
+      z-index: 4;
+    }
+    
+    &[data-pos="1"] {
+      transform: translateX(14%) scale(.9);
+      z-index: 4;
+    }
+
+    .carousel__item_active {
+      background: red;
+    }
   }
 }
 
