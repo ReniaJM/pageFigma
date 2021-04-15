@@ -1,3 +1,5 @@
+
+// .....carosel
 const state = {};
 const carouselList = document.querySelector('.carousel__list');
 const carouselItems =document.querySelectorAll('.carousel__item');
@@ -38,3 +40,5 @@ const getPos = function (current, active) {
 
   return diff;
 }
+// .....carosel
+

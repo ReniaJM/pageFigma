@@ -1,5 +1,6 @@
 @import './variables';
-@import './desktop';
+@import './rwd';
+@import './mixin';
 
 
 *,
@@ -10,10 +11,12 @@
   box-sizing: border-box;
 }
 
-// img {
-//   width: 100%;
-//   max-width: 100%;
-// }
+img {
+  width: 100%;
+  height: auto;
+
+ 
+}
 
 a {
   text-decoration: none;
@@ -22,6 +25,7 @@ a {
 li {
   list-style: none;
 }
+
 
 
 html {
@@ -37,7 +41,16 @@ html {
         width: 100%;
         height: 782px;
         background: url("../images/Bg.jpeg") center no-repeat;
+        background-size: 100% 100%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         background-size: cover;
+        @include breakpoint(small) {
+          width: 100%; //Properties for large screens
+        
+      }
+   
 
         & .nav {
           display: flex;
@@ -60,16 +73,18 @@ html {
           & li{
             list-style: none;
             padding: 58px 30px;
-            line-height: 16,8px;
+            line-height: 17px;
             & a {
               text-decoration: none;
               color: $white;
             }
+           
           }
         }
 
         .hero_content {
           text-align: center;
+          
 
           & h2 {
             position: absolute;
@@ -79,7 +94,11 @@ html {
             top: 257px;
             font-size: 72px;
             text-transform: uppercase;
-            line-height: 86,4px;
+            line-height: 86px;
+            @include breakpoint(small) {
+              font-size: 50px;
+            
+          }
           }
             & h3 {
               position: absolute;
@@ -89,6 +108,10 @@ html {
               top: 382px;
               font-size: 24px;
               line-height: 150%;
+              @include breakpoint(small) {
+                font-size: 16px;
+              
+            }
             }
               & a {
                 position: absolute;
@@ -126,14 +149,15 @@ html {
           display: flex;
           justify-content: center;
 
-        & .features_box {
-          position: relative;
-          width: 350px;
-          height: 250px;
-          background: url('../images/fature_1.jpeg');
-          border-radius: 8px;
-          margin:30px;
-          & .featuers_description {
+      .features_box {
+        position: relative;
+        width: 350px;
+        height: 250px;
+        border-radius: 8px;
+        margin:30px;
+       
+       
+          .featuers_description {
             position: absolute;
             left: 29px;
             top: 157px;
@@ -163,6 +187,18 @@ html {
                   line-height: 150%;
                 }
             }
+          }
+          .box_first{
+            background: url('../images/feature_1.jpeg');
+            repeat: no-repeat;
+          }
+          .box_second{
+            background: url('../images/feature_2.jpeg');
+            repeat: no-repeat;
+          }
+          .box_third{
+            background: url('../images/feature_3.jpeg');
+            repeat: no-repeat;
           }
         }
       }
@@ -261,7 +297,6 @@ line-height: 14px;
   height: 250px;
   border-radius: 8px;
   margin:30px;
-
   background: {
     image: $image;
     repeat: no-repeat;
@@ -283,7 +318,6 @@ display: flex;
   width: 40%;
   max-width: 445px;
   margin:122px 0px 0px 165px;
-  
  
 }
 
@@ -395,3 +429,98 @@ width: 32px;
   }
 }
 
+.contact_container {
+  display: flex;
+  }
+.contact_section {
+  background-color: $white;
+  height: 500px;
+  width: 100%;
+}
+
+.contact_form{
+  width: 60%;
+  color: $black;
+  margin: 117px;
+ 
+}
+
+
+.contact_description {
+  width: 40%;
+  max-width: 445px;
+  margin:117px 0px 0px 176px;
+ 
+}
+
+.contact_description h2{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43px;
+  color: $black;
+  padding-bottom: 50px;
+  
+  }
+  
+  .contact_description h3{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: justify;
+    color: $black;
+  }
+
+ 
+
+  input[type=text]{
+    border: 1px solid #333333;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 255px;
+    height: 60px;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+
+color: $inputLabel;
+  }
+
+
+  input[type=tel], select{
+    border: 1px solid #333333;
+box-sizing: border-box;
+border-radius: 6px;
+width: 540px;
+height: 60px;
+padding-left: 25px;
+margin-bottom: 20px;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+
+color:$inputLabel;
+
+  }
+
+  input[type=submit] {
+    width: 160px;
+height: 50px;
+background: #ED4C5C;
+border: 1.5px solid #ED4C5C;
+box-sizing: border-box;
+border-radius: 6px;
+color: $white;
+text-transform: uppercase;
+  }
+
+  input[name="name"] {
+  margin-right: 25px;
+  }
+
+  
