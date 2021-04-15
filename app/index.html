@@ -6,14 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>Figma Page</title>
   <meta name="description" content="Figma Page">
-
   <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
 
-  <section class="hero_section" id="overview">
+  <section id="overview" class="hero_section">
     <nav role="navigation" class="nav">
       <div class="logo">
         <a href="#hero">
@@ -38,40 +37,42 @@
           </li>
         </ul>
     </nav>
-    <div class="hero_content">
+    <div class="hero_content" >
       <h2>CloudBudget</h2>
       <h3>Cloud budget management for everyone. Only<br> €69.95 a Month After a 7 Day Trial of 
         <br>Up to €4.99</h3>
       <a class="sign_up">sign up</a>
     </div>
-  </section>
-
+</section>
 
 <section class="features_section" id="features">
   <div class="features_heading">
     <h2>features</h2>
   </div>
   <div class="features_container">
-    <div class="features_box box_first">
+    <div class="features_wrapper">
+      <div class="features_box"><img src="./images/feature_1.jpeg" /></div>
       <div class="featuers_description">
         <h2>Supports All Currencies and Cards</h2>
         <h3>We support all popular currencies and is fully customizable to add</h3>
         <a class="featuers_button">Read More</a>
-        </div>
+      </div>
     </div>
-    <div class="features_box box_second">
-      <div class="featuers_description ">
+    <div class="features_wrapper">
+      <div class="features_box"><img src="./images/feature_2.jpeg" /></div>
+      <div class="featuers_description">
         <h2>Manage your expenses on the go</h2>
         <h3>You can access your account from anywhere in the world on any device</h3>
         <a class="featuers_button">Read More</a>
-        </div>
+      </div>
     </div>
-    <div class="features_box  box_third">
+    <div class="features_wrapper">
+      <div class="features_box"><img src="./images/feature_3.jpeg" /></div>
       <div class="featuers_description">
         <h2>Cloud Budget Management Software</h2>
         <h3>Our software is made so you can access and manage your budget</h3>
         <a class="featuers_button">Read More</a>
-        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -154,8 +155,7 @@
       <h3>Questions or concerns? Just fill out the form below and our support team will get back to you within 24 hours</h3>
     </div>
     <div class="contact_form">
-    
-        <form name="theForm">
+        <form name="theForm" id="sign_up">
             <input type="text" id="txtName" name="name" required autofocus placeholder="First Name">
             <input type="text" id="txtName" name="last_name" required autofocus placeholder="Last Name">
            <input type="tel" id="txtPhone" name="phone" required placeholder="Phone Number">
@@ -165,14 +165,11 @@
               <option value="BB">BB</option>
               <option value="CC">CC</option>
             </select>
-          <input type="submit" value="Submit Now" id="sign_up" class="submit_button">
-
+          <input type="submit" value="Submit Now" class="submit_button">
        </form>
-     
     </div>
   </div>
 </section>
-
 
 <script src="js/vendors/jquery-3.4.1.min.js"></script>
 <script src="js/script.min.js"></script>

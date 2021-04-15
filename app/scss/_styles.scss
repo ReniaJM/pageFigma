@@ -1,5 +1,4 @@
 @import './variables';
-@import './rwd';
 @import './mixin';
 
 
@@ -14,8 +13,6 @@
 img {
   width: 100%;
   height: auto;
-
- 
 }
 
 a {
@@ -26,35 +23,52 @@ li {
   list-style: none;
 }
 
-
+section {
+  overflow: hidden;
+}
 
 html {
   font-family: $mainFont;
   font-size: 14px;
-  font-weight: normal;;
+  font-weight: normal;
   scroll-behavior: smooth;
   color: $white;
     body {
       overflow-x: hidden;
       margin: 0;
+    
       .hero_section{
         width: 100%;
-        height: 782px;
+        height: 775px;
         background: url("../images/Bg.jpeg") center no-repeat;
-        background-size: 100% 100%;
-        background-position: center top;
+        background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
-        @include breakpoint(small) {
-          width: 100%; //Properties for large screens
         
-      }
-   
-
+        @include breakpoint(mobileonly) {
+            position: relative;
+          }
+        
+      
         & .nav {
           display: flex;
           justify-content: space-around;
+          align-items: center;
+          @include breakpoint(mobileonly) {
+          flex-direction: column;
+          }
+          @include breakpoint(iphone) {
+            flex-direction: column;
+            text-align: center;
+           
+            }
+
+          @include breakpoint(tablet) {
+            flex-direction: column;
+            text-align: center;
+
+            }
         }
         
         .headline-logo {
@@ -64,16 +78,37 @@ html {
           padding: 58px 30px;
           color: $white;
           font-weight: 700;
+          @include breakpoint(mobileonly) {
+            text-align: center;
+            padding: 25px 15px;
+             }
+
         }
         .list {
           text-transform: uppercase;
           display: flex;
           max-width: 835px;
           color: $white;
+          @include breakpoint(mobileonly) {
+            flex-direction: column;
+            }
+            @include breakpoint(iphone) {
+              flex-direction: column;
+              text-align: center;
+              }
+       
           & li{
             list-style: none;
-            padding: 58px 30px;
             line-height: 17px;
+            padding: 20px;
+            @include breakpoint(mobileonly) {
+             text-align: center;
+             padding: 15px;
+              }
+             
+              @include breakpoint(tablet) {            
+                padding: 40px;
+                }
             & a {
               text-decoration: none;
               color: $white;
@@ -84,50 +119,52 @@ html {
 
         .hero_content {
           text-align: center;
-          
-
+       
+       
           & h2 {
-            position: absolute;
-            width: 578px;
-            height: 86px;
-            left: 431px;
-            top: 257px;
             font-size: 72px;
             text-transform: uppercase;
             line-height: 86px;
-            @include breakpoint(small) {
-              font-size: 50px;
-            
-          }
+            padding-top: 96px;
+            @include breakpoint(mobileonly) {
+              font-size: 30px;
+              line-height: 40px;
+              left: 0px;
+              top: 0px;
+               }
+               @include breakpoint(iphone) {
+                font-size: 50px;
+              line-height: 40px;
+              padding-top: 40px;
+                }
+        
           }
             & h3 {
-              position: absolute;
-              width: 540px;
-              height: 124px;
-              left: 450px;
-              top: 382px;
               font-size: 24px;
               line-height: 150%;
-              @include breakpoint(small) {
-                font-size: 16px;
-              
-            }
+              padding-top: 55px;
+              padding-bottom: 70px;
+
+              @include breakpoint(mobileonly) {
+                font-size: 14px;
+                line-height:150%;
+              }
+              @include breakpoint(iphone) {
+                font-size: 18px;
+                line-height:150%;
+                }
+         
             }
               & a {
-                position: absolute;
                 width: 160px;
                 height: 50px;
-                left: 640px;
-                top: 545px;
                 background: #FFFFFF;
                 border-radius: 6px;
                 text-transform: uppercase;
                 color: $button;
                 line-height: 17px;
-                display: flex;
-                align-items: center;
                 text-transform: uppercase;
-                justify-content: center;
+                padding: 17px 52px;
               }
         }
           
@@ -137,6 +174,18 @@ html {
       .features_section {
         background-color: $background;
         height: 664px;
+        width: 100%;
+        @include breakpoint(mobileonly) {
+          height:auto;
+        }
+        @include breakpoint(iphone) {
+          height:auto;
+          }
+        @include breakpoint(tablet) {
+          height:auto;
+      
+      }
+       
         & h2 {
           color:$black;
           text-align: center;
@@ -144,35 +193,63 @@ html {
           font-size: 36px;
           line-height: 43px;
           padding: 63px;
+          @include breakpoint(mobileonly) {
+            font-size: 25px;
+            line-height: 43px;
+            padding: 30px;
+          }
         }
         .features_container {
           display: flex;
           justify-content: center;
+          flex-wrap: wrap;
+          @include breakpoint(mobileonly) {
+          
+            justify-content: center;
+          }
+          .features_wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // flex: 1 0 20rem;
+            height: 100vh;
+            @include breakpoint(tablet) {
+              flex-direction: row;
+          
+          }
+           
+        
+          }
+         
 
       .features_box {
-        position: relative;
         width: 350px;
         height: 250px;
         border-radius: 8px;
-        margin:30px;
-       
-       
+        margin:15px;
+      
+      }
+      
           .featuers_description {
-            position: absolute;
-            left: 29px;
-            top: 157px;
+         
             width: 293px;
             height: 198px;
-            background: #FFFFFF;
+            background: $white;
             box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             color: $black;
             text-align: center;
+            margin: -30%;
+            @include breakpoint(tablet) {
+                 margin: 0;
+          
+          }
             & h2 {
               font-weight: bold;
               font-size: 18px;
               line-height: 22px;
               padding: 20px 32px;
+          
             }
               & h3 {
                 font-weight: normal;
@@ -187,19 +264,7 @@ html {
                   line-height: 150%;
                 }
             }
-          }
-          .box_first{
-            background: url('../images/feature_1.jpeg');
-            repeat: no-repeat;
-          }
-          .box_second{
-            background: url('../images/feature_2.jpeg');
-            repeat: no-repeat;
-          }
-          .box_third{
-            background: url('../images/feature_3.jpeg');
-            repeat: no-repeat;
-          }
+       
         }
       }
     
@@ -216,6 +281,12 @@ html {
 .tech_section {
   background-color: $white;
   height: 500px;
+  @include breakpoint(mobileonly) {
+   height: 100%;
+   }
+   @include breakpoint(iphone) {
+    height: 100%;
+    }
  
 }
 .tech_heading h2 {
@@ -228,6 +299,11 @@ html {
   text-align: center;
   text-transform: capitalize;
   padding: 63px;
+  @include breakpoint(mobileonly) {
+    font-size: 25px;
+    line-height: 43px;
+    padding: 30px;
+  }
   
 }
 
@@ -235,6 +311,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  @include breakpoint(mobileonly) {
+    flex-direction: column;
+    padding-bottom: 40px;
+   }
+   @include breakpoint(iphone) {
+    flex-direction: column;
+    padding-bottom: 40px;
+    }
 }
 
 .tech h2 {
@@ -247,10 +331,18 @@ html {
   }
   .tech_box {
     width: 20%;
+
+    @include breakpoint(mobileonly) {
+     width: 100%;
+    }
+    @include breakpoint(iphone) {
+      width: 100%;
+     }
+    @include breakpoint(tablet) {
+      width: 100%;
+     }
   }
-  .tech_number {
-    position: relative;
-  }
+
 
 .tech_description {
 text-align: center;
@@ -263,14 +355,13 @@ font-size: 100px;
 line-height: 120px;
 padding: 20px 32px;
 color: rgba(16, 16, 16, 0.08);
+margin-bottom: -60px;
 }
 
 .tech_description i {
-position: absolute;
-top:90px;
-left:120px;
 color: $button;
 font-size: 47px;
+
 }
 
 
@@ -304,20 +395,65 @@ line-height: 14px;
 }
  
 
-.slider_container {
-display: flex;
-}
-
-
 .slider_section {
   background-color: $button;
   height: 500px;
   width: 100%;
+  @include breakpoint(mobileonly) {
+    height: 100%;
+    }
+    @include breakpoint(iphone) {
+      height: 100%;
+      }
+    @include breakpoint(tablet) {
+      height: 100%;
+      }
 }
+.slider_container {
+display: flex;
+@include breakpoint(mobileonly) {
+  flex-direction: column;
+  }
+  @include breakpoint(iphone) {
+    flex-direction: column;
+    align-items: center;
+    }
+  @include breakpoint(tablet) {
+    flex-direction: column;
+    align-items: center;
+   
+   }
+
+}
+
+
+
 .slider_description {
   width: 40%;
   max-width: 445px;
   margin:122px 0px 0px 165px;
+  @include breakpoint(mobileonly) {
+   width: 100%;
+  padding: 10px;
+  margin: 0;
+  padding-bottom: 40px;
+  text-align: center;
+}
+@include breakpoint(iphone) {
+  width: 100%;
+ padding: 10px;
+ margin: 0;
+ padding-top: 40px;
+ text-align: center;
+}
+@include breakpoint(tablet) {
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  
+ }
+ 
  
 }
 
@@ -327,6 +463,10 @@ font-weight: 600;
 font-size: 36px;
 line-height: 43px;
 padding-bottom: 24px;
+@include breakpoint(mobileonly) {
+text-align: center;
+}
+
 
 }
 
@@ -337,10 +477,26 @@ padding-bottom: 24px;
   line-height: 140%;
   text-align: justify;
   padding-bottom: 24px;
+  @include breakpoint(mobileonly) {
+    width: 100%;
+  
+  
+ }
 }
 .slider_animation{
   width: 60%;
   color: $white;
+  margin: 94px;
+  @include breakpoint(mobileonly) {
+ display: none;
+   
+   }
+  @include breakpoint(tablet) {
+    width: 100%;
+    padding: 10px;
+    margin: 40px;
+   
+   }
 }
 
 .slider_icons {
@@ -355,9 +511,6 @@ width: 32px;
 
 }
 
-.slider_animation {
-  margin: 94px;
-}
 
 
 
@@ -389,6 +542,11 @@ width: 32px;
     border-radius: 15px;
     position: absolute;
     transition: all .3s ease-in;
+    @include breakpoint(iphone) {
+      width: 400px;
+      height: 270px;
+     
+     }
 
     &:nth-child(1) {
       background: url("../images/Video_bg_2.jpeg");
@@ -429,27 +587,65 @@ width: 32px;
   }
 }
 
-.contact_container {
-  display: flex;
-  }
+
 .contact_section {
   background-color: $white;
   height: 500px;
   width: 100%;
+  @include breakpoint(mobileonly) {
+   height: 100%;
+   }
+   @include breakpoint(iphone) {
+    height: 100%;
+    }
+   @include breakpoint(tablet) {
+    height: 100%;
+    }
 }
+.contact_container {
+  display: flex;
+  @include breakpoint(mobileonly) {
+    flex-direction: column;
+    padding-bottom: 20px;
+   }
+   @include breakpoint(iphone) {
+    flex-direction: column;
+    padding-bottom: 40px;
+    align-items: center;
+   }
+   @include breakpoint(tablet) {
+    flex-direction: column;
+    padding-bottom: 40px;
+   align-items: center;
+   }
+  }
 
-.contact_form{
-  width: 60%;
-  color: $black;
-  margin: 117px;
- 
-}
+
+
 
 
 .contact_description {
   width: 40%;
   max-width: 445px;
   margin:117px 0px 0px 176px;
+  @include breakpoint(mobileonly) {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    }
+    @include breakpoint(iphone) {
+      width: 100%;
+      padding: 10px;
+      margin: 0;
+      text-align: center;
+      }
+    @include breakpoint(tablet) {
+      width: 100%;
+      padding: 10px;
+      margin: 0;
+      text-align: center;
+      }
  
 }
 
@@ -460,6 +656,10 @@ width: 32px;
   line-height: 43px;
   color: $black;
   padding-bottom: 50px;
+  @include breakpoint(iphone) {
+    padding-bottom: 25px;
+    padding-top: 25px;
+    }
   
   }
   
@@ -470,6 +670,32 @@ width: 32px;
     line-height: 140%;
     text-align: justify;
     color: $black;
+  }
+
+  .contact_form{
+    width: 60%;
+    color: $black;
+    margin: 117px;
+    @include breakpoint(mobileonly) {
+      width: 100%;
+      padding: 10px;
+      margin: 0;
+      text-align: center;
+    
+      }
+      @include breakpoint(iphone) {
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+        text-align: center;
+      
+        }
+      @include breakpoint(tablet) {
+        width: 60%;
+        padding: 10px;
+        margin: 40px;
+        text-align: center;
+        }
   }
 
  
@@ -488,7 +714,22 @@ font-size: 16px;
 line-height: 19px;
 
 color: $inputLabel;
+@include breakpoint(mobileonly) {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
   }
+  @include breakpoint(iphone) {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    }
+  @include breakpoint(tablet) {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    }
+}
 
 
   input[type=tel], select{
@@ -505,6 +746,22 @@ font-size: 16px;
 line-height: 19px;
 
 color:$inputLabel;
+@include breakpoint(mobileonly) {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  }
+  @include breakpoint(iphone) {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    }
+  @include breakpoint(tablet) {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    }
+  
 
   }
 
@@ -523,4 +780,8 @@ text-transform: uppercase;
   margin-right: 25px;
   }
 
+  
+
+
+  
   
