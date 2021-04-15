@@ -1,5 +1,5 @@
 
-// .....carousel
+// carousel start
 const state = {};
 const carouselList = document.querySelector('.carousel__list');
 const carouselItems =document.querySelectorAll('.carousel__item');
@@ -40,5 +40,38 @@ const getPos = function (current, active) {
 
   return diff;
 }
-// .....carousel
+// carousel end
 
+// form validation start
+function validate() {
+
+  function validatePhoneNumber(input_str) {
+    var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  
+    return re.test(input_str);
+  }
+  var phone = document.getElementById('txtPhone').value;
+      
+  if( document.myForm.name.value == "") {
+     alert( "Please provide your name!" );
+     document.myForm.name.focus() ;
+     return false;
+  }
+  if( document.myForm.last_name.value == "" ) {
+    alert( "Please provide your last name!" );
+    document.myForm.last_name.focus() ;
+    return false;
+ }
+  if (!validatePhoneNumber(phone)) {
+    alert( "Please provide your phone!" );
+    document.myForm.phone.focus() ;
+  } 
+
+  if( document.myForm.service.value == "-1" ) {
+     alert( "Please provide your service!" );
+     document.myForm.service.focus() ;
+     return false;
+  }
+  return( true );
+}
+// form validation endć
