@@ -1,4 +1,6 @@
-Radom page
+# Project website with HTML, SCSS and JavaScript 
+
+View [live working app (https://github.com/ReniaJM/pageFigma).
 
 ### Requirements
 - node.js

@@ -1,7 +1,7 @@
 {
-  "name": "project-one",
+  "name": "Website",
   "version": "1.0.0",
-  "description": "Random website",
+  "description": "Website based on Figma project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

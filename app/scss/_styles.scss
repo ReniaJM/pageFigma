@@ -1,7 +1,6 @@
 @import './variables';
 @import './mixin';
 
-
 *,
 *::before,
 *::after { 
@@ -36,21 +35,19 @@ html {
     body {
       overflow-x: hidden;
       margin: 0;
-    
-      .hero_section{
+
+// hero section start
+      .hero_section {
         width: 100%;
         height: 775px;
         background: url("../images/Bg.jpeg") center no-repeat;
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: cover;
-        
+        background-size: cover;  
         @include breakpoint(mobileonly) {
-            position: relative;
+          position: relative;
           }
-        
-      
         & .nav {
           display: flex;
           justify-content: space-around;
@@ -61,13 +58,10 @@ html {
           @include breakpoint(iphone) {
             flex-direction: column;
             text-align: center;
-           
-            }
-
+          }
           @include breakpoint(tablet) {
             flex-direction: column;
             text-align: center;
-
             }
         }
         
@@ -79,48 +73,45 @@ html {
           color: $white;
           font-weight: 700;
           @include breakpoint(mobileonly) {
-            text-align: center;
-            padding: 25px 15px;
-             }
-
+          text-align: center;
+          padding: 25px 15px;
+          }
         }
+
         .list {
           text-transform: uppercase;
           display: flex;
           max-width: 835px;
           color: $white;
           @include breakpoint(mobileonly) {
-            flex-direction: column;
-            }
-            @include breakpoint(iphone) {
-              flex-direction: column;
-              text-align: center;
-              }
+          flex-direction: column;
+          }
+          @include breakpoint(iphone) {
+          flex-direction: column;
+          text-align: center;
+          }
        
-          & li{
+          & li {
             list-style: none;
             line-height: 17px;
             padding: 20px;
             @include breakpoint(mobileonly) {
-             text-align: center;
-             padding: 15px;
-              }
-             
-              @include breakpoint(tablet) {            
-                padding: 40px;
-                }
+            text-align: center;
+            padding: 15px;
+            }
+            @include breakpoint(tablet) {            
+            padding: 40px;
+            }
             & a {
               text-decoration: none;
               color: $white;
             }
-           
           }
         }
 
         .hero_content {
           text-align: center;
-       
-       
+
           & h2 {
             font-size: 72px;
             text-transform: uppercase;
@@ -134,10 +125,9 @@ html {
                }
                @include breakpoint(iphone) {
                 font-size: 50px;
-              line-height: 40px;
-              padding-top: 40px;
+                line-height: 40px;
+                padding-top: 40px;
                 }
-        
           }
             & h3 {
               font-size: 24px;
@@ -153,7 +143,6 @@ html {
                 font-size: 18px;
                 line-height:150%;
                 }
-         
             }
               & a {
                 width: 160px;
@@ -166,11 +155,11 @@ html {
                 text-transform: uppercase;
                 padding: 17px 52px;
               }
-        }
-          
-
+          }
       }
+   // hero section start
 
+   // features section start
       .features_section {
         background-color: $background;
         height: 664px;
@@ -182,21 +171,15 @@ html {
           height:auto;
           }
         @include breakpoint(tablet) {
-          height:auto;
-      
+          height:auto;   
       }
        
         & h2 {
-          color:$black;
-          text-align: center;
-          text-transform: capitalize;
-          font-size: 36px;
-          line-height: 43px;
-          padding: 63px;
+          @include heading($black);
           @include breakpoint(mobileonly) {
-            font-size: 25px;
-            line-height: 43px;
-            padding: 30px;
+          font-size: 25px;
+          line-height: 43px;
+          padding: 30px;
           }
         }
         .features_container {
@@ -204,34 +187,23 @@ html {
           justify-content: center;
           flex-wrap: wrap;
           @include breakpoint(mobileonly) {
-          
-            justify-content: center;
+          justify-content: center;
           }
           .features_wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-            // flex: 1 0 20rem;
             height: 100vh;
             @include breakpoint(tablet) {
               flex-direction: row;
-          
           }
-           
-        
+          .features_box {
+            width: 350px;
+            height: 250px;
+            border-radius: 8px;
+            margin:15px;
           }
-         
-
-      .features_box {
-        width: 350px;
-        height: 250px;
-        border-radius: 8px;
-        margin:15px;
-      
-      }
-      
-          .featuers_description {
-         
+          .features_description {
             width: 293px;
             height: 198px;
             background: $white;
@@ -241,15 +213,13 @@ html {
             text-align: center;
             margin: -30%;
             @include breakpoint(tablet) {
-                 margin: 0;
-          
+            margin: 0;
           }
             & h2 {
               font-weight: bold;
               font-size: 18px;
               line-height: 22px;
               padding: 20px 32px;
-          
             }
               & h3 {
                 font-weight: normal;
@@ -264,524 +234,443 @@ html {
                   line-height: 150%;
                 }
             }
-       
+          }
         }
       }
-    
-     
-    }
-  
+   // features section end
 
-}
-
-
-
-// .................
-
-.tech_section {
-  background-color: $white;
-  height: 500px;
-  @include breakpoint(mobileonly) {
-   height: 100%;
-   }
-   @include breakpoint(iphone) {
-    height: 100%;
-    }
- 
-}
-.tech_heading h2 {
-  color: $black;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 43px;
-  letter-spacing: 0em;
-  text-align: center;
-  text-transform: capitalize;
-  padding: 63px;
-  @include breakpoint(mobileonly) {
-    font-size: 25px;
-    line-height: 43px;
-    padding: 30px;
-  }
-  
-}
-
-.tech_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include breakpoint(mobileonly) {
-    flex-direction: column;
-    padding-bottom: 40px;
-   }
-   @include breakpoint(iphone) {
-    flex-direction: column;
-    padding-bottom: 40px;
-    }
-}
-
-.tech h2 {
-  color:$black;
-  text-align: center;
-  text-transform: capitalize;
-  font-size: 36px;
-  line-height: 43px;
-  padding: 63px;
-  }
-  .tech_box {
-    width: 20%;
-
+   // tech section start
+   .tech_section {
+    background-color: $white;
+    height: 500px;
     @include breakpoint(mobileonly) {
-     width: 100%;
-    }
+     height: 100%;
+     }
     @include breakpoint(iphone) {
-      width: 100%;
-     }
-    @include breakpoint(tablet) {
-      width: 100%;
-     }
-  }
-
-
-.tech_description {
-text-align: center;
-color: $black;
-
-}
-
-.tech_description h2 {
-font-size: 100px;
-line-height: 120px;
-padding: 20px 32px;
-color: rgba(16, 16, 16, 0.08);
-margin-bottom: -60px;
-}
-
-.tech_description i {
-color: $button;
-font-size: 47px;
-
-}
-
-
-.tech_description h3 {
-font-style: normal;
-font-weight: bold;
-font-size: 18px;
-line-height: 22px;
-padding: 10px;
-
-}
-
-.tech_description p {
-  font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 14px;
-}
-
-
-@mixin featurebox($image) {
-  position: relative;
-  width: 350px;
-  height: 250px;
-  border-radius: 8px;
-  margin:30px;
-  background: {
-    image: $image;
-    repeat: no-repeat;
-  }
-}
- 
-
-.slider_section {
-  background-color: $button;
-  height: 500px;
-  width: 100%;
-  @include breakpoint(mobileonly) {
     height: 100%;
     }
-    @include breakpoint(iphone) {
+    .tech_heading h2 {
+      @include heading($black);
+      @include breakpoint(mobileonly) {
+        font-size: 25px;
+        line-height: 43px;
+        padding: 30px;
+      }
+    }
+    .tech_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include breakpoint(mobileonly) {
+        flex-direction: column;
+        padding-bottom: 40px;
+       }
+       @include breakpoint(iphone) {
+        flex-direction: column;
+        padding-bottom: 40px;
+        }
+        .tech_box {
+          width: 20%;
+          @include breakpoint(mobileonly) {
+           width: 100%;
+          }
+          @include breakpoint(iphone) {
+            width: 100%;
+           }
+          @include breakpoint(tablet) {
+            width: 100%;
+           }
+           .tech_description {
+            text-align: center;
+            color: $black;
+            }
+            .tech_description h2 {
+              font-size: 100px;
+              line-height: 120px;
+              padding: 20px 32px;
+              color: rgba(16, 16, 16, 0.08);
+              margin-bottom: -60px;
+              }
+              .tech_description i {
+              color: $button;
+              font-size: 47px;
+              }
+              .tech_description h3 {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 22px;
+                padding: 10px;
+                }
+              .tech_description p {
+              font-style: normal;
+              font-weight: normal;
+              font-size: 12px;
+              line-height: 14px;
+              }
+        }
+    }
+  }
+    // tech section end
+
+    // carousel section start
+    .carousel_section {
+      background-color: $button;
+      height: 500px;
+      width: 100%;
+      @include breakpoint(mobileonly) {
+        height: 100%;
+        }
+      @include breakpoint(iphone) {
       height: 100%;
       }
-    @include breakpoint(tablet) {
+      @include breakpoint(tablet) {
       height: 100%;
       }
-}
-.slider_container {
-display: flex;
-@include breakpoint(mobileonly) {
-  flex-direction: column;
-  }
-  @include breakpoint(iphone) {
-    flex-direction: column;
-    align-items: center;
+      .carousel_container {
+        display: flex;
+          @include breakpoint(mobileonly) {
+          flex-direction: column;
+          }
+          @include breakpoint(iphone) {
+          flex-direction: column;
+          align-items: center;
+          }
+          @include breakpoint(tablet) {
+          flex-direction: column;
+          align-items: center;
+          }
+          .carousel_description {
+            width: 40%;
+            max-width: 445px;
+            margin:122px 0px 0px 165px;
+            @include breakpoint(mobileonly) {
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            padding-bottom: 40px;
+            text-align: center;
+            @include rwdSections(100%, 15px, 0, center)
+          }
+            @include breakpoint(iphone) {
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            padding-top: 40px;
+            text-align: center;
+            @include rwdSections(100%, 15px, 0, center)
+            }
+            @include breakpoint(tablet) {
+              @include rwdSections(100%, 15px, 0, center)
+            }
+          }
+          .carousel_description h2 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 43px;
+            padding-bottom: 24px;
+              @include breakpoint(mobileonly) {
+              text-align: center;
+              }
+            }
+            .carousel_description h3 {
+              font-style: normal;
+              font-weight: normal;
+              font-size: 14px;
+              line-height: 140%;
+              text-align: justify;
+              padding-bottom: 24px;
+              @include breakpoint(mobileonly) {
+                width: 100%;
+             }
+            }
+            .carousel_icons {
+              color:$white;
+             }
+             
+             .carousel_icons img {
+             margin-right: 20px;
+             align-items: center;
+             width: 32px;
+             }
+            .carousel_animation {
+              width: 60%;
+              color: $white;
+              margin: 94px;
+              @include breakpoint(mobileonly) {
+              display: none;
+              }
+              @include breakpoint(tablet) {
+              width: 100%;
+              padding: 10px;
+              margin: 40px;
+              }
+              .carousel {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+                font-family: Arial;
+                &__list {
+                  display: flex;
+                  list-style: none;
+                  position: relative;
+                  width: 100%;
+                  height: 300px;
+                  justify-content: center;
+                  perspective: 300px;
+                }
+                &__item {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: #fff;
+                  font-size: 0px;
+                  width: 445px;
+                  height: 311px;
+                  border-radius: 15px;
+                  position: absolute;
+                  transition: all .3s ease-in;
+                  @include breakpoint(iphone) {
+                  width: 400px;
+                  height: 270px; 
+                  }
+                  &:nth-child(1) {
+                    background: url("../images/Video_bg_2.jpeg");
+                    background-size: cover;
+                  }
+                  &:nth-child(2) {
+                    background: url("../images/Video_bg.jpeg");
+                    background-size: cover;
+                  }
+                  &:nth-child(3) {
+                    background: url("../images/Video_bg_3.jpeg");
+                    background-size: cover;
+                  }
+                  &[data-pos="0"] {
+                    z-index: 5;
+                  }
+                  &[data-pos="-1"],
+                  &[data-pos="1"] {
+                    opacity: 0.5;
+                    filter: grayscale(90%);
+                  }
+                  &[data-pos="-1"] {
+                    transform: translateX(-14%) scale(.9);
+                    z-index: 4;
+                  }
+                  &[data-pos="1"] {
+                    transform: translateX(14%) scale(.9);
+                    z-index: 4;
+                  }
+                }
+              }
+            }
+        }
     }
-  @include breakpoint(tablet) {
-    flex-direction: column;
-    align-items: center;
-   
-   }
+  // carousel section end
 
-}
-
-
-
-.slider_description {
-  width: 40%;
-  max-width: 445px;
-  margin:122px 0px 0px 165px;
-  @include breakpoint(mobileonly) {
-   width: 100%;
-  padding: 10px;
-  margin: 0;
-  padding-bottom: 40px;
-  text-align: center;
-}
-@include breakpoint(iphone) {
-  width: 100%;
- padding: 10px;
- margin: 0;
- padding-top: 40px;
- text-align: center;
-}
-@include breakpoint(tablet) {
-  width: 100%;
-  padding: 10px;
-  margin: 0;
-  text-align: center;
-  
- }
- 
- 
-}
-
-.slider_description h2{
-font-style: normal;
-font-weight: 600;
-font-size: 36px;
-line-height: 43px;
-padding-bottom: 24px;
-@include breakpoint(mobileonly) {
-text-align: center;
-}
-
-
-}
-
-.slider_description h3{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 140%;
-  text-align: justify;
-  padding-bottom: 24px;
-  @include breakpoint(mobileonly) {
+  // contact section start
+  .contact_section {
+    background-color: $white;
+    height: 500px;
     width: 100%;
-  
-  
- }
-}
-.slider_animation{
-  width: 60%;
-  color: $white;
-  margin: 94px;
-  @include breakpoint(mobileonly) {
- display: none;
-   
-   }
-  @include breakpoint(tablet) {
-    width: 100%;
-    padding: 10px;
-    margin: 40px;
-   
-   }
-}
-
-.slider_icons {
-  color:$white;
-
-}
-
-.slider_icons img {
-margin-right: 20px;
-align-items: center;
-width: 32px;
-
-}
-
-
-
-
-.carousel {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  font-family: Arial;
-
-  &__list {
-    display: flex;
-    list-style: none;
-    position: relative;
-    width: 100%;
-    height: 300px;
-    justify-content: center;
-    perspective: 300px;
-  }
-  
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 0px;
-    width: 445px;
-    height: 311px;
-    border-radius: 15px;
-    position: absolute;
-    transition: all .3s ease-in;
-    @include breakpoint(iphone) {
-      width: 400px;
-      height: 270px;
-     
-     }
-
-    &:nth-child(1) {
-      background: url("../images/Video_bg_2.jpeg");
-      background-size: cover;
-    }
-    &:nth-child(2) {
-      background: url("../images/Video_bg.jpeg");
-      background-size: cover;
-    }
-    &:nth-child(3) {
-      background: url("../images/Video_bg_3.jpeg");
-      background-size: cover;
-    }
-
-    &[data-pos="0"] {
-      z-index: 5;
-    }
-    
-    &[data-pos="-1"],
-    &[data-pos="1"] {
-      opacity: 0.5;
-      filter: grayscale(90%);
-    }
-    
-    &[data-pos="-1"] {
-      transform: translateX(-14%) scale(.9);
-      z-index: 4;
-    }
-    
-    &[data-pos="1"] {
-      transform: translateX(14%) scale(.9);
-      z-index: 4;
-    }
-
-    .carousel__item_active {
-      background: red;
-    }
-  }
-}
-
-
-.contact_section {
-  background-color: $white;
-  height: 500px;
-  width: 100%;
-  @include breakpoint(mobileonly) {
-   height: 100%;
-   }
-   @include breakpoint(iphone) {
-    height: 100%;
-    }
-   @include breakpoint(tablet) {
-    height: 100%;
-    }
-}
-.contact_container {
-  display: flex;
-  @include breakpoint(mobileonly) {
-    flex-direction: column;
-    padding-bottom: 20px;
-   }
-   @include breakpoint(iphone) {
-    flex-direction: column;
-    padding-bottom: 40px;
-    align-items: center;
-   }
-   @include breakpoint(tablet) {
-    flex-direction: column;
-    padding-bottom: 40px;
-   align-items: center;
-   }
-  }
-
-
-
-
-
-.contact_description {
-  width: 40%;
-  max-width: 445px;
-  margin:117px 0px 0px 176px;
-  @include breakpoint(mobileonly) {
-    width: 100%;
-    padding: 10px;
-    margin: 0;
-    text-align: center;
-    }
-    @include breakpoint(iphone) {
-      width: 100%;
-      padding: 10px;
-      margin: 0;
-      text-align: center;
-      }
-    @include breakpoint(tablet) {
-      width: 100%;
-      padding: 10px;
-      margin: 0;
-      text-align: center;
-      }
- 
-}
-
-.contact_description h2{
-  font-style: normal;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 43px;
-  color: $black;
-  padding-bottom: 50px;
-  @include breakpoint(iphone) {
-    padding-bottom: 25px;
-    padding-top: 25px;
-    }
-  
-  }
-  
-  .contact_description h3{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 140%;
-    text-align: justify;
-    color: $black;
-  }
-
-  .contact_form{
-    width: 60%;
-    color: $black;
-    margin: 117px;
     @include breakpoint(mobileonly) {
-      width: 100%;
-      padding: 10px;
-      margin: 0;
-      text-align: center;
-    
+    height: 100%;
+    }
+    @include breakpoint(iphone) {
+    height: 100%;
+    }
+    @include breakpoint(tablet) {
+    height: 100%;
+    }
+    .contact_container {
+      display: flex;
+      @include breakpoint(mobileonly) {
+      flex-direction: column;
+      padding-bottom: 20px;
       }
       @include breakpoint(iphone) {
-        width: 100%;
-        padding: 10px;
-        margin: 0;
-        text-align: center;
-      
-        }
+        flex-direction: column;
+        padding-bottom: 40px;
+        align-items: center;
+      }
       @include breakpoint(tablet) {
-        width: 60%;
-        padding: 10px;
-        margin: 40px;
-        text-align: center;
+        flex-direction: column;
+        padding-bottom: 40px;
+      align-items: center;
+      }
+      .contact_description {
+        width: 40%;
+        max-width: 445px;
+        margin:117px 0px 0px 176px;
+        @include breakpoint(mobileonly) {
+          @include rwdSections(100%, 15px, 0, center)
         }
-  }
-
- 
-
-  input[type=text]{
-    border: 1px solid #333333;
-    box-sizing: border-box;
-    border-radius: 6px;
-    width: 255px;
-    height: 60px;
-    padding-left: 25px;
-    margin-bottom: 20px;
-    font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 19px;
-
-color: $inputLabel;
-@include breakpoint(mobileonly) {
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  }
-  @include breakpoint(iphone) {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
+        @include breakpoint(iphone) {
+          @include rwdSections(100%, 15px, 0, center)
+        }
+        @include breakpoint(tablet) {
+          @include rwdSections(100%, 15px, 0, center)
+        }
+      }
+      .contact_description h2{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 43px;
+        color: $black;
+        padding-bottom: 50px;
+        @include breakpoint(iphone) {
+        padding-bottom: 25px;
+        padding-top: 25px;
+        }
+      }
+        
+      .contact_description h3{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: justify;
+        color: $black;
+      }
+      .contact_form {
+        width: 60%;
+        color: $black;
+        margin: 117px;
+        @include breakpoint(mobileonly) {
+          @include rwdSections(100%, 15px, 0, center) 
+        }
+        @include breakpoint(iphone) {
+          @include rwdSections(100%, 15px, 0, center)
+        }
+        @include breakpoint(tablet) {
+          @include rwdSections(60%, 15px, 0, center)
+        }
+        input[type=text] {
+          border: 1px solid $inputBorder;
+          box-sizing: border-box;
+          border-radius: 6px;
+          width: 255px;
+          height: 60px;
+          padding-left: 25px;
+          margin-bottom: 20px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 19px;
+          color: $inputLabel;
+            @include breakpoint(mobileonly) {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            }
+            @include breakpoint(iphone) {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            }
+            @include breakpoint(tablet) {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            }
+          }
+          input[type=tel], select{
+            border: 1px solid #333333;
+            box-sizing: border-box;
+            border-radius: 6px;
+            width: 540px;
+            height: 60px;
+            padding-left: 25px;
+            margin-bottom: 20px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            color:$inputLabel;
+              @include breakpoint(mobileonly) {
+              width: 100%;
+              padding: 10px;
+              text-align: center;
+              }
+              @include breakpoint(iphone) {
+              width: 100%;
+              padding: 10px;
+              text-align: center;
+              }
+              @include breakpoint(tablet) {
+              width: 100%;
+              padding: 10px;
+              text-align: center;
+              }
+            }
+            input[type=submit] {
+              width: 160px;
+              height: 50px;
+              background: $button;
+              border: 1.5px solid $button;
+              box-sizing: border-box;
+              border-radius: 6px;
+              color: $white;
+              text-transform: uppercase;
+              }
+              
+              input[name="name"] {
+              margin-right: 25px;
+              }
+        }
     }
-  @include breakpoint(tablet) {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
+  }
+  // contact section end
     }
 }
 
 
-  input[type=tel], select{
-    border: 1px solid #333333;
-box-sizing: border-box;
-border-radius: 6px;
-width: 540px;
-height: 60px;
-padding-left: 25px;
-margin-bottom: 20px;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 19px;
+ 
 
-color:$inputLabel;
-@include breakpoint(mobileonly) {
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  }
-  @include breakpoint(iphone) {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    }
-  @include breakpoint(tablet) {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+ 
 
-  }
 
-  input[type=submit] {
-    width: 160px;
-height: 50px;
-background: #ED4C5C;
-border: 1.5px solid #ED4C5C;
-box-sizing: border-box;
-border-radius: 6px;
-color: $white;
-text-transform: uppercase;
-  }
 
-  input[name="name"] {
-  margin-right: 25px;
-  }
+
+
+
+
 
   
 
 
-  
   
